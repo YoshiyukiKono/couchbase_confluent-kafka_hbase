@@ -128,6 +128,43 @@ Starting connect
 connect is [UP]
 ```
 
+```
+[ec2-user@ip-10-0-0-209 ~]$ confluent local load hbase -- -d hbase-qs.json
+    The local commands are intended for a single-node development environment
+    only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
+
+{
+  "name": "hbase",
+  "config": {
+    "topics": "cars",
+    "tasks.max": "1",
+    "connector.class": "io.confluent.connect.hbase.HBaseSinkConnector",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "confluent.topic.bootstrap.servers": "localhost:9092",
+    "confluent.topic.replication.factor": "1",
+    "hbase.zookeeper.quorum": "10.0.0.78",
+    "hbase.zookeeper.property.clientPort": "2182",
+    "auto.create.tables": "true",
+    "auto.create.column.families": "true",
+    "table.name.format": "cars",
+    "name": "hbase"
+  },
+  "tasks": [],
+  "type": "sink"
+}
+[ec2-user@ip-10-0-0-209 ~]$ confluent local status
+    The local commands are intended for a single-node development environment
+    only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
+
+control-center is [UP]
+ksql-server is [UP]
+connect is [UP]
+kafka-rest is [UP]
+schema-registry is [UP]
+kafka is [UP]
+zookeeper is [UP]
+```
 
 ## JQ
 

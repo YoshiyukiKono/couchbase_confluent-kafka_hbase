@@ -1,1 +1,1 @@
-# couchbase_confluent-kafka_hbase
+# Couchbase, Confluent Kafka, and HBase

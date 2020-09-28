@@ -2,7 +2,7 @@
 
 ## Overview Diagram
 
-![Overview Diagram](cb_confluent_hbase_diagram.jpg)
+![Overview Diagram](./images/cb_confluent_hbase_diagram.jpg)
 
 ## Requirement
 

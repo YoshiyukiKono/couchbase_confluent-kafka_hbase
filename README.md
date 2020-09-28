@@ -1,27 +1,41 @@
 # Couchbase, Confluent Kafka, and HBase
 
-# Diagram
+## Overview Diagram
 
-# Requirement
+![Overview Diagram](cb_confluent_hbase_diagram.jpg)
+
+## Requirement
 
 https://docs.confluent.io/current/installation/system-requirements.html
 
-# Setup
+## Environment
+I confirmed with the following environment
 
-## Couchbase
+- Public Cloud: AWS
 
-## Confluent Platform
+[couchbase-aws-scripts](https://github.com/YoshiyukiKono/couchbase-aws-scripts)
 
+### Couchbase
+- AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
+- Instance Type: t2.medium
 
-## Configuration
-### Couchbase Kafka Connector
+### Confluent
+- AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
+- Instance Type: t2.xlarge
 
-### Counfluent HBase Connector
+## Couchbase Setup
 
-## Run
+## Confluent Platform Setup
 
+[1_kafka_setup.md](1_kafka_setup.md)
 
-### Kafka Connector
+## Kafka Connector Setup
+
+### Configuration
+
+[2_configuration_kafka_connector.md](2_configuration_kafka_connector.md)
+
+### Run
 ```
 cd $KAFKA_CONNECT_COUCHBASE_HOME
 env CLASSPATH=lib/* \
@@ -29,4 +43,6 @@ env CLASSPATH=lib/* \
                        etc/car-source.properties
 ```
 
-### Confluent HBase Connector
+## HBase Connector Setup
+
+[3_setup_hbase_connector.md](3_setup_hbase_connector.md)

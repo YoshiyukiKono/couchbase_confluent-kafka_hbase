@@ -87,8 +87,39 @@ connect is [UP]
 
 ## Start HBase Connector
 
+### Create a Configuration File 
+
+- topics: (Your Kafka Topic Name)
+- table.name.format: (HBase Table Name)
+- auto.create.tables": "true" (If "true", table is automatically created)
+- auto.create.column.families: "false" (If "false", value of the topic, JSON document, is stored in a column. When you use "true", you must be concious about schema mapping between JSON document and HBase column families)
+- confluent.topic.bootstrap.servers: "<Your Kafka Host>:902"
+- hbase.zookeeper.quorum": (Your ZooKeeper Host)
+- hbase.zookeeper.property.clientPort": "2181" (Your ZooKeeper Client Port, "2181" is used by CDH)
+
+Sample
 ```
-[ec2-user@ip-10-0-0-209 ~]$ confluent local load hbase -- -d hbase-qs.json
+{
+  "name": "hbase",
+  "config": {
+    "topics": "cars",
+    "tasks.max": "1",
+    "connector.class": "io.confluent.connect.hbase.HBaseSinkConnector",
+    "key.converter":"org.apache.kafka.connect.storage.StringConverter",
+    "value.converter":"org.apache.kafka.connect.storage.StringConverter",
+    "confluent.topic.bootstrap.servers": "localhost:9092",
+    "confluent.topic.replication.factor":1,
+    "hbase.zookeeper.quorum": "10.0.0.78",
+    "hbase.zookeeper.property.clientPort": "2181",
+    "auto.create.tables": "true",
+    "auto.create.column.families": "false",
+    "table.name.format": "cars_table"
+  }
+}
+```
+### Run 
+```
+$ confluent local load hbase -- -d hbase-qs.json
     The local commands are intended for a single-node development environment
     only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
 
@@ -105,7 +136,7 @@ connect is [UP]
     "hbase.zookeeper.quorum": "10.0.0.78",
     "hbase.zookeeper.property.clientPort": "2181",
     "auto.create.tables": "true",
-    "auto.create.column.families": "true",
+    "auto.create.column.families": "false",
     "table.name.format": "cars",
     "name": "hbase"
   },
@@ -113,6 +144,8 @@ connect is [UP]
   "type": "sink"
 }
 ```
+*When it is successfull, you will see the output like above.*
+
 Once it is started, you can check on http://<your host>:9021
   
 ![Confluent Control Center Connect](images/confluent_control_center_connect.jpg)

@@ -51,7 +51,26 @@ $ sudo systemctl enable --now snapd.socket
 $ sudo ln -s /var/lib/snapd/snap /snap
 $ sudo snap install jq
 ```
-Reference: https://snapcraft.io/install/jq/rhel
+Reference: [How to install jq on Red Hat Enterprise Linux](https://snapcraft.io/install/jq/rhel)
+
+
+## Check Kafka Connect is Running
+
+```
+[ec2-user@ip-10-0-0-209 ~]$ confluent local status
+    The local commands are intended for a single-node development environment
+    only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
+
+control-center is [UP]
+ksql-server is [UP]
+connect is [UP]
+kafka-rest is [UP]
+schema-registry is [UP]
+kafka is [UP]
+zookeeper is [UP]
+```
+
+## Start HBase Connector
 
 ```
 $ confluent local start connect
@@ -91,17 +110,6 @@ connect is [UP]
   "tasks": [],
   "type": "sink"
 }
-[ec2-user@ip-10-0-0-209 ~]$ confluent local status
-    The local commands are intended for a single-node development environment
-    only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
-
-control-center is [UP]
-ksql-server is [UP]
-connect is [UP]
-kafka-rest is [UP]
-schema-registry is [UP]
-kafka is [UP]
-zookeeper is [UP]
 ```
 
 

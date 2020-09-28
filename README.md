@@ -13,8 +13,6 @@ I confirmed with the following environment
 
 - Public Cloud: AWS
 
-[couchbase-aws-scripts](https://github.com/YoshiyukiKono/couchbase-aws-scripts)
-
 ### Couchbase
 - AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
 - Instance Type: t2.medium
@@ -24,6 +22,8 @@ I confirmed with the following environment
 - Instance Type: t2.xlarge
 
 ## Couchbase Setup
+
+[couchbase-aws-scripts](https://github.com/YoshiyukiKono/couchbase-aws-scripts)
 
 ## Confluent Platform Setup
 

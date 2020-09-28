@@ -69,8 +69,7 @@ schema-registry is [UP]
 kafka is [UP]
 zookeeper is [UP]
 ```
-
-## Start HBase Connector
+If it is not running, you can start `connect` as follows.
 
 ```
 $ confluent local start connect
@@ -84,6 +83,9 @@ schema-registry is already running. Try restarting if needed
 Starting connect
 connect is [UP]
 ```
+
+
+## Start HBase Connector
 
 ```
 [ec2-user@ip-10-0-0-209 ~]$ confluent local load hbase -- -d hbase-qs.json
@@ -111,5 +113,7 @@ connect is [UP]
   "type": "sink"
 }
 ```
-
+Once it is started, you can check on http://<your host>:9021
+  
+![Confluent Control Center Connect](images/confluent_control_center_connect.jpg)
 

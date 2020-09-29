@@ -68,7 +68,7 @@ Now you can run Kafka Connector.
 ```
 cd $KAFKA_CONNECT_COUCHBASE_HOME
 env CLASSPATH=lib/* \
-    connect-standalone.sh $KAFKA_HOME/config/connect-confluent.properties \
+    connect-standalone.sh $KAFKA_CONNECT_COUCHBASE_HOME/connect-confluent.properties \
                        etc/car-source.properties
 ```                       
 

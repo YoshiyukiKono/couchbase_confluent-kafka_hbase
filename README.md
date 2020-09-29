@@ -26,19 +26,27 @@ I confirmed with the following environment
 - AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
 - Instance Type: t2.xlarge
 
+### Cloudera
+
+You can prepare your Cloudera cluster using the script maintained in my repository, [Single Node CDH Cluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster).
+
 ## Couchbase Setup
 
 [couchbase-aws-scripts](https://github.com/YoshiyukiKono/couchbase-aws-scripts)
 
 ## Confluent Platform Setup
 
-[1_kafka_setup.md](1_kafka_setup.md)
+[1_1_Confluent_kafka_setup.md](1_1_Confluent_kafka_setup.md)
 
 ## Kafka Connector Setup
 
+### Install
+
+[2_1_couchbase_kafka-connector_install.md](2_1_couchbase_kafka-connector_install.md)
+
 ### Configuration
 
-[2_configuration_kafka_connector.md](2_configuration_kafka_connector.md)
+[2_2_couchbase_kafka-connector_config.md](2_2_couchbase_kafka-connector_config.md)
 
 ### Run Kafka Connector
 
@@ -54,7 +62,7 @@ env CLASSPATH=lib/* \
 
 ### Configuration
 
-[3_setup_hbase_connector.md](3_setup_hbase_connector.md)
+[1_2_conflluent_hbase_connector_setup.md](1_2_conflluent_hbase_connector_setup.md)
 
 
 ### Run Confluent Platform

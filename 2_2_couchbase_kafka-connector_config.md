@@ -55,13 +55,22 @@ Or, use [connect-confluent.properties](./config/connect-confluent.properties) in
 Edit the copied file for your settings.
 
 ```
-vi  $KAFKA_HOME/config/connect-confluent.properties
+vi  $KAFKA_CONNECT_COUCHBASE_HOME/connect-confluent.properties
 ```
 Change the distination
 ```
 #bootstrap.servers=localhost:9092
 bootstrap.servers=10.0.0.209:9092
 ```
+
+## Run Kafka Connector
+Now you can run Kafka Connector.
+```
+cd $KAFKA_CONNECT_COUCHBASE_HOME
+env CLASSPATH=lib/* \
+    connect-standalone.sh $KAFKA_HOME/config/connect-confluent.properties \
+                       etc/car-source.properties
+```                       
 
 ## Reference
 

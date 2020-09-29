@@ -1,0 +1,9 @@
+KEY_NAME=~/ykono-cb-ohio
+
+
+INSTANCE_NAME=ykono-cluster-base
+REGION=us-east-2
+
+TAG_PROJECT=cdp_workshop
+TAG_OWNER=yoshiyuki.kono@couchbase.com
+

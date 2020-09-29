@@ -46,7 +46,7 @@ After you restart your host, you need to run Confluent Platform (No need to run 
 ```
 cd $KAFKA_CONNECT_COUCHBASE_HOME
 env CLASSPATH=lib/* \
-    connect-standalone.sh $KAFKA_HOME/config/connect-confluent.properties \
+    connect-standalone.sh $KAFKA_CONNECT_COUCHBASE_HOME/connect-confluent.properties \
                        etc/car-source.properties
 ```
 

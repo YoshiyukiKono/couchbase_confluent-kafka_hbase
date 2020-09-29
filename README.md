@@ -13,20 +13,28 @@ This covers the following items.
 
 https://docs.confluent.io/current/installation/system-requirements.html
 
+### OS
+https://docs.confluent.io/current/installation/system-requirements.html#operating-systems
+
+- RHEL/CentOS 7.x
+- RHEL/CentOS 8.x
+
+I confirmed with 7.x.
+
 ## Environment
 I confirmed with the following environment
 
 - Cloud: AWS
 
-### Couchbase
-- AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
-- Instance Type: t2.medium
-
 ### Confluent
-- AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
+- OS: Red Hat Enterprise Linux (RHEL) 7 (HVM) (RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2)
 - Instance Type: t2.xlarge
 
 *Please note that Confluent Platform is resource-intensive. You will fail to register and start HBase Connector without enough memory.*
+
+### Couchbase
+- OS: Red Hat Enterprise Linux (RHEL) 7 (HVM) (RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2)
+- Instance Type: t2.medium
 
 ### Cloudera
 

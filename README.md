@@ -1,10 +1,15 @@
 # Couchbase, Confluent Kafka, and HBase
 
+This covers;
+- Setup Couchbase Kafka Connector
+- Setup Confluent Platform
+- Setup Confluent HBase Connector
+
 ## Overview Diagram
 
 ![Overview Diagram](./images/cb_confluent_hbase_diagram.jpg)
 
-## Requirement
+## Confluent System Requirements
 
 https://docs.confluent.io/current/installation/system-requirements.html
 
@@ -47,13 +52,12 @@ env CLASSPATH=lib/* \
 
 ## HBase Connector Setup
 
-
 ### Configuration
 
 [3_setup_hbase_connector.md](3_setup_hbase_connector.md)
 
 
-### Run Kafka Platform
+### Run Confluent Platform
 
 After you restart your host, you need to run Confluent Platform (No need to register HBase Connector again).
 ```

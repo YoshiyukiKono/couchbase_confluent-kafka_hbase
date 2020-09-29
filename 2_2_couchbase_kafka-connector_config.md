@@ -44,12 +44,19 @@ couchbase.password=couchbase
 
 ## Distination Property File
 
-Copy a default peoperties file for your settings.
+Copy a default `connect-standalone.properties` file from your Kafka environment and move to the host where Kafka Connector is running.
+
 ```
 cp  $KAFKA_HOME/config/connect-standalone.properties $KAFKA_HOME/config/connect-confluent.properties
-vi  $KAFKA_HOME/config/connect-confluent.properties
 ```
 
+Or, use [connect-confluent.properties](./config/connect-confluent.properties) in this repository, which is copied from `connect-standalone.properties` of Apache Kafka 2.13-2.6.0.
+
+Edit the copied file for your settings.
+
+```
+vi  $KAFKA_HOME/config/connect-confluent.properties
+```
 Change the distination
 ```
 #bootstrap.servers=localhost:9092

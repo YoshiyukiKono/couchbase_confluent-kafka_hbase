@@ -42,7 +42,7 @@ Optionally, you may refer to my shell scripts for Couchbase Cluster preparetion 
 
 ## Instance for Confluent Platform
 
-When you can use shell scripts and AWS CLI, you can use the scripts [here](couchbase_confluent-kafka_hbase/scripts/) to create a new EC2 instance.
+When you can use shell scripts and AWS CLI, you can use the scripts [here](./scripts/) to create a new EC2 instance.
 
 Otherwise, please create an instance that meets the above specifications, AMI and Instance Type, on your own.
 

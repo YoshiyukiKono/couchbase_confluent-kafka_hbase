@@ -39,23 +39,6 @@ export PATH=$PATH:$CONFLUENT_HOME/bin
 source /etc/profile
 ```
 
-Not necessarily needed.
-
-```
-$ confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:latest
-Running in a "--no-prompt" mode 
-Implicit acceptance of the license below:  
-Apache License 2.0 
-https://www.apache.org/licenses/LICENSE-2.0 
-Downloading component Kafka Connect Datagen 0.3.3, provided by Confluent, Inc. from Confluent Hub and installing into /opt/confluent/share/confluent-hub-components 
-Adding installation directory to plugin path in the following files: 
-  /opt/confluent/etc/kafka/connect-distributed.properties 
-  /opt/confluent/etc/kafka/connect-standalone.properties 
-  /opt/confluent/etc/schema-registry/connect-avro-distributed.properties 
-  /opt/confluent/etc/schema-registry/connect-avro-standalone.properties 
- 
-Completed 
-```
 ## Usage
 
 ### Start Confluent Services

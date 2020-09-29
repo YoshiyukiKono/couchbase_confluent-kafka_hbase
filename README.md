@@ -40,7 +40,13 @@ Optionally, you may refer to my shell scripts for Couchbase Cluster preparetion 
 
 [couchbase-aws-scripts](https://github.com/YoshiyukiKono/couchbase-aws-scripts)
 
-## Confluent Platform Setup
+## Instance for Confluent Platform
+
+When you can use shell scripts and AWS CLI, you can use the scripts [here](couchbase_confluent-kafka_hbase/scripts/) to create a new EC2 instance.
+
+Otherwise, please create an instance that meets the above specifications, AMI and Instance Type, on your own.
+
+## Cofluent Platform Setup
 
 [1_1_confluent_kafka_setup.md](1_1_confluent_kafka_setup.md)
 
@@ -56,7 +62,7 @@ Optionally, you may refer to my shell scripts for Couchbase Cluster preparetion 
 
 ### Run Kafka Connector
 
-After you restart your host, you need to run Confluent Platform (No need to run Couchbase Server manually).
+After you restart your host, you need to run Kafka Connector every time.
 ```
 cd $KAFKA_CONNECT_COUCHBASE_HOME
 env CLASSPATH=lib/* \

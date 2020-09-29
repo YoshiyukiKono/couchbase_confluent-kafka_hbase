@@ -1,5 +1,5 @@
 {
-    "ImageId": "<YOUR_AMI_IDE_IN_YOUR_REGION",
+    "ImageId": "<YOUR_AMI_ID_IN_YOUR_REGION>",
     "KeyName": "<YOUR_KEY_NAME_WO_FILE_EXTENSION>",
     "SecurityGroupIds": [
          "<YOUR_SECURITY_GROUP_ID>"

@@ -84,7 +84,7 @@ After you restart your host, you need to run Confluent Platform (No need to regi
 $ confluent local start
 ```
 
-## Check Data Stream
+## Check Data Stored in HBase
 
 Login to your Cloudera CDH Cluster and check the data in HBase.
 

@@ -16,7 +16,7 @@ https://docs.confluent.io/current/installation/system-requirements.html
 ## Environment
 I confirmed with the following environment
 
-- Public Cloud: AWS
+- Cloud: AWS
 
 ### Couchbase
 - AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2

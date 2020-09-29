@@ -1,11 +1,11 @@
 # Configuration - Couchbase Kafka Connector
 
-https://docs.couchbase.com/kafka-connector/4.0/quickstart.html
+You need to know the following items. 
 
-https://docs.couchbase.com/kafka-connector/4.0/release-notes.html
-
-
-## Couchbase Kafka Connector
+- the ip address of your Confluent Platform reachable from Kafka Connector (on Couchbase Server).
+- Kafka topic name
+- Couchbase user and password
+- Couchbase bucket name
 
 ## Source Property Configuration
 Copy a default peoperties file for your settings.
@@ -56,3 +56,8 @@ Change the distination
 bootstrap.servers=10.0.0.209:9092
 ```
 
+## Reference
+
+https://docs.couchbase.com/kafka-connector/4.0/quickstart.html
+
+https://docs.couchbase.com/kafka-connector/4.0/release-notes.html

@@ -1,31 +1,26 @@
 #!/bin/bash
 
-. ./my_aws.config
+. ./personal.config
 
 echo "KEY_NAME:" $KEY_NAME
 echo "TAG_PROJECT:" $TAG_PROJECT
 echo "TAG_OWNER:" $TAG_OWNER
 echo "INSTANCE_NAME:" $INSTANCE_NAME
+echo "REGION:" $REGION
+
+CLI_INPUT_JSON=file://cli_input.json
 
 LANG=c date +%Y%m%d
 
-#KEY_NAME=~/ykono-cb-ohio
 OS_USER=ec2-user
-
-CLI_INPUT_JSON=file://my_cli_input.json
 
 TAG_DATE=`LANG=c date +%Y%m%d`
 TAG_DATE_TIME=`LANG=c date +%Y%m%d_%H%M`
 TAG_ENDDATE=`LANG=c date -v +7d +%m%d%Y`
 
-#TAG_PROJECT=CS300
-#TAG_OWNER=yoshiyuki.kono@couchbase.com
-
-
-#INSTANCE_NAME=ykono-cluster-couchbase
 INSTANCE_FULLNAME="${INSTANCE_NAME}_${TAG_DATE_TIME}"
 
-INSTANCE_TYPE=t2.medium
+INSTANCE_TYPE=t2.xlarge
 
 
 TAG_SPECS="ResourceType=instance,Tags=[\
@@ -34,7 +29,7 @@ TAG_SPECS="ResourceType=instance,Tags=[\
 {Key=enddate,Value=${TAG_ENDDATE}},\
 {Key=project,Value=${TAG_PROJECT}}]"
 
-REGION=us-east-2
+#REGION=us-east-2
 
 MSG_DRYRUN_EXPECTED="Request would have succeeded, but DryRun flag is set"
 
@@ -94,17 +89,6 @@ PUBLIC_IP=$(aws ec2 describe-instances --instance-id $INSTANCE_ID  --query 'Rese
 
 echo Public IP: $PUBLIC_IP
 
-FILENAME_LOGIN_SHELL="login_${INSTANCE_FULLNAME}.sh"
-
-# Genenate login shell
-cat <<EOF > $FILENAME_LOGIN_SHELL
-ssh $OS_USER@$PUBLIC_IP
-#ssh -i $KEY_NAME.pem $OS_USER@$PUBLIC_IP
-EOF
-
-chmod +x $FILENAME_LOGIN_SHELL
-#ssh $OS_USER@$PUBLIC_IP lsblk
-
 # Passwordless Login
 # ssh-keygen -t rsa
 # ssh -i $KEY_NAME.pem $OS_USER@$PUBLIC_IP mkdir -p ssh
@@ -115,10 +99,13 @@ ssh  -o "StrictHostKeyChecking=no" -i $KEY_NAME.pem $OS_USER@$PUBLIC_IP 'chmod 7
 EOF
 }
 
-#NODES=(CM Master1 Worker1 Worker2 Worker3 CDSW)
-NODES=(CB1 CB2 CB3 CB4 CB5 CB6 CB7 CB8 CB9)
+NODES=(CONFLUENT)
 for node in ${NODES[@]}
 do
   create_instance $node
 done
+
 chmod +x $FILENAME_PASSWORDLESS_SHELL
+./$FILENAME_PASSWORDLESS_SHELL
+
+

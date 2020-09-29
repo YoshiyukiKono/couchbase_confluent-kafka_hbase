@@ -1,10 +1,10 @@
 {
-    "ImageId": "ami-0a54aef4ef3b5f881",
-    "KeyName": "ykono-cb-ohio",
+    "ImageId": "<YOUR_AMI_IDE_IN_YOUR_REGION",
+    "KeyName": "<YOUR_KEY_NAME_WO_FILE_EXTENSION>",
     "SecurityGroupIds": [
-         "sg-011150d0f1146ff26"
+         "<YOUR_SECURITY_GROUP_ID>"
     ],
-    "InstanceType": "t2.medium",
+    "InstanceType": "t2.xlarge",
     "BlockDeviceMappings": [
         {
             "DeviceName": "/dev/sda1",
@@ -19,7 +19,7 @@
     "Monitoring": {
         "Enabled": false
     },
-    "SubnetId": "subnet-03487b03e62cc50d3",
+    "SubnetId": "<YOUR_SUBNET_ID>",
     "DisableApiTermination": true,
     "NetworkInterfaces": [
         {

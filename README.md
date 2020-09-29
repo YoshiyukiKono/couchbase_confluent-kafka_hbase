@@ -35,7 +35,9 @@ I confirmed with the following environment
 
 [2_configuration_kafka_connector.md](2_configuration_kafka_connector.md)
 
-### Run
+### Run Kafka Connector
+
+After you restart your host, you need to run Confluent Platform (No need to run Couchbase Server manually).
 ```
 cd $KAFKA_CONNECT_COUCHBASE_HOME
 env CLASSPATH=lib/* \
@@ -45,4 +47,30 @@ env CLASSPATH=lib/* \
 
 ## HBase Connector Setup
 
+
+### Configuration
+
 [3_setup_hbase_connector.md](3_setup_hbase_connector.md)
+
+
+### Run Kafka Platform
+
+After you restart your host, you need to run Confluent Platform (No need to register HBase Connector again).
+```
+$ confluent local start
+```
+
+## Check Data Stream
+
+Login to your Cloudera CDH Cluster and check the data in HBase.
+
+```
+$ hbase shell
+...
+> scan 'cars'
+```
+When you import data to Couchbase, you will find the same data in HBase in real-time.
+
+```
+$ cbimport json -c couchbase://127.0.0.1 -u Administrator -p couchbase -b cars -d file://ten_cars.json  -f lines -g '#UUID#'
+```

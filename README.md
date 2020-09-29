@@ -26,7 +26,7 @@ I confirmed with the following environment
 - AMI: RHEL-7.7_HVM-20191119-x86_64-2-Hourly2-GP2
 - Instance Type: t2.xlarge
 
-* Please note that Confluent Platform is resource-intensive. You will fail to start HBase Connector without enough memory.*
+*Please note that Confluent Platform is resource-intensive. You will fail to start HBase Connector without enough memory.*
 
 ### Cloudera
 

@@ -1,4 +1,4 @@
-# Configuration - Couchbase Kafka Connector
+# Couchbase Kafka Connector Configuration
 
 You need to know the following items. 
 

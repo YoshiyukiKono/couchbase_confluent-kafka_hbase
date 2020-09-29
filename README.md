@@ -1,6 +1,6 @@
 # Couchbase, Confluent Kafka, and HBase
 
-This covers;
+This covers the following items.
 - Setup Couchbase Kafka Connector
 - Setup Confluent Platform
 - Setup Confluent HBase Connector

@@ -15,6 +15,7 @@ Copy the following files and save without `.template` suffix.
 Please replace `<YOUR__...>` in `cli_input.json` with the values for your AWS environment.
 
 ```
+    "ImageId": "<YOUR_AMI_ID_IN_YOUR_REGION>",
     "KeyName": "<YOUR_KEY_NAME_WO_FILE_EXTENSION>",
     "SecurityGroupIds": [
          "<YOUR_SECURITY_GROUP_ID>"

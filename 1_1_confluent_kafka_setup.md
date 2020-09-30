@@ -47,6 +47,8 @@ Note: the command sample (`confluent local services start`) in the [QUick Start]
 ```
 $ confluent local start
 ```
+
+
 ### Create a Topic
 
 Navigate to the Control Center web interface at http://localhost:9021/ and select your cluster.

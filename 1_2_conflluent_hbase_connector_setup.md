@@ -150,3 +150,8 @@ Once it is started, you can check on http://<your host>:9021
   
 ![Confluent Control Center Connect](images/confluent_control_center_connect.jpg)
 
+
+### Unload
+```
+confluent local connect unload hbase
+```

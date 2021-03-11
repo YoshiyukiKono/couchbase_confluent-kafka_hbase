@@ -99,10 +99,21 @@ Login to your Cloudera CDH Cluster and check the data in HBase.
 ```
 $ hbase shell
 ...
-> scan 'cars'
+hbase> scan 'cars'
 ```
+Count command returns the number of rows in a table. It’s quite fast when configured with the right CACHE
+```
+hbase> count 'cars', CACHE => 1000
+```
+The above count fetches 1000 rows at a time. Set CACHE lower if your rows are big. Default is to fetch one row at a time.
+
 When you import data to Couchbase, you will find the same data in HBase in real-time.
+
+
+For further details, please refer to: https://hbase.apache.org/book.html#shell
 
 ```
 $ cbimport json -c couchbase://127.0.0.1 -u Administrator -p couchbase -b cars -d file://ten_cars.json  -f lines -g '#UUID#'
 ```
+
+## 

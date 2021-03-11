@@ -108,7 +108,12 @@ hbase> count 'cars', CACHE => 1000
 The above count fetches 1000 rows at a time. Set CACHE lower if your rows are big. Default is to fetch one row at a time.
 
 
-For further details about `hbase shell`, please refer to: https://hbase.apache.org/book.html#shell
+For further details about `hbase shell`, please refer to Apache HBase ™ Reference Guide: https://hbase.apache.org/book.html#shell
+
+You would easily find some other unofficial resources as follows:
+- [HBase Shell Commands with Examples](https://www.guru99.com/hbase-shell-general-commands.html)
+- [HBase Shell Commands Cheat Sheet](https://sparkbyexamples.com/hbase/hbase-shell-commands-cheat-sheet/)
+- [HBase - Shell - Tutorialspoint](https://www.google.com/search?q=hbase+shell+quick+reference&rlz=1C5GCEM_en&oq=hbase+shell+quick+reference&aqs=chrome..69i57.6202j0j7&sourceid=chrome&ie=UTF-8)
 
 ## Import data to Couchbase
 
